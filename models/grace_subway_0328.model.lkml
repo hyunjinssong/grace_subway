@@ -11,3 +11,4 @@ datagroup: grace_subway_0328_default_datagroup {
 persist_with: grace_subway_0328_default_datagroup
 
 explore: card_bi {}
+explore: total_line{}
