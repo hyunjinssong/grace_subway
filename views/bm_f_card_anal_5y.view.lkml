@@ -55,6 +55,7 @@ view: bm_f_card_anal_5y {
       quarter,
       year
     ]
+    label: " 당기"
     convert_tz: no
     datatype: date
     sql: ${TABLE}.use_dt ;;
@@ -62,7 +63,16 @@ view: bm_f_card_anal_5y {
 
   dimension_group: use_dt_interval {
     type: time
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year
+    ]
     convert_tz: no
+    label: "전기"
     datatype: date
     sql: date_sub(${use_dt_date}, INTERVAL 1 Year);;
   }
