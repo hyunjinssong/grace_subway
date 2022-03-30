@@ -16,4 +16,12 @@ explore: transfer {}
 
 explore: bm_f_unsturct__5y {}
 
-explore: bm_f_card_anal_5y {}
+explore: bm_f_card_anal_5y {
+  join: line_total{
+    type: left_outer
+    sql_on: ${line_total.bm_f_card_anal_5y_subway_route_nm} = ${bm_f_card_anal_5y.subway_route_nm} ;;
+    relationship: one_to_many
+  }
+}
+
+explore: line_total {}
