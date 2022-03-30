@@ -60,6 +60,13 @@ view: bm_f_card_anal_5y {
     sql: ${TABLE}.use_dt ;;
   }
 
+  dimension_group: use_dt_interval {
+    type: time
+    convert_tz: no
+    datatype: date
+    sql: date_sub(${use_dt_date}, INTERVAL 1 Year);;
+  }
+
   measure: count {
     type: count
     drill_fields: []
