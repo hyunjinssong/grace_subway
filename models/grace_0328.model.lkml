@@ -33,7 +33,7 @@ explore: line_number {}
 
 explore: new {
   join: data {
-    type: left_outer
+    type: inner
     sql_on: DATE_ADD(${data.bm_f_card_anal_5y_use_dt_date}, Interval 1 YEAR) = ${new.use_dt}
     AND ${data.bm_f_card_anal_5y_station_nm} = ${new.station_nm} ;;
     relationship: one_to_one
