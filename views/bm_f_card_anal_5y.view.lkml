@@ -4,32 +4,38 @@ view: bm_f_card_anal_5y {
 
   dimension: get_cnt {
     type: number
+    label: "총승차인원수"
     sql: ${TABLE}.get_cnt ;;
   }
 
   dimension: get_off {
     type: number
+    label: "총하차인원수"
     sql: ${TABLE}.get_off ;;
   }
 
   dimension: moving_passenger_cnt {
     type: number
+    label: "유동인원수"
     sql: ${TABLE}.moving_passenger_cnt ;;
   }
 
   dimension: station_nm {
     type: string
+    label: "역명"
     sql: ${TABLE}.station_nm ;;
   }
 
   dimension: subway_route_nm {
     type: string
+    label: "호선"
     sql: ${TABLE}.subway_route_nm ;;
   }
 
   dimension: sunsusong_cnt {
     type: number
-    sql: ${TABLE}.sunsusong_cnt ;;
+    label: "순수송인원수"
+    sql: abs(${TABLE}.sunsusong_cnt) ;;
   }
 
   dimension_group: use_dt {
