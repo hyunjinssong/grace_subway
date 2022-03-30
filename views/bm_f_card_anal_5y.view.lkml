@@ -38,6 +38,13 @@ view: bm_f_card_anal_5y {
     sql: abs(${TABLE}.sunsusong_cnt) ;;
   }
 
+  dimension: sumsumasdf {
+    type: number
+    label: " 다더한거"
+    sql: sum(${TABLE}.sunsusong_cnt);;
+  }
+
+
   dimension_group: use_dt {
     type: time
     timeframes: [
